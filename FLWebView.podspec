@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
                    This is an example Xcode project demonstrating how to use WKWebView in iOS 8 with a UIWebView fallback for earlier versions of iOS.
                    DESC
 
-  s.homepage     = "https://github.com/floatlearning/FLWebView"
+  s.homepage     = "https://github.com/DRosadoYew/FLWebView"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/floatlearning/FLWebView.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/DRosadoYew/FLWebView.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
