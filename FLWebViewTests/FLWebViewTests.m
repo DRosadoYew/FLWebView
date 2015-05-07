@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "FLWebViewProvider.h"
-#import "ViewController.h"
+#import "WebViewController.h"
 #import "UIWebView+FLUIWebView.h"
 #import "WKWebView+FLWKWebView.h"
 
