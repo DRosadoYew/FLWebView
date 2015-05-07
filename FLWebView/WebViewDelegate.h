@@ -6,28 +6,34 @@
 //  Copyright (c) 2015 Float Mobile Learning. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import UIKit.UIView;
+#import "FLWebViewProvider.h"
 
 @protocol WebViewDelegate <NSObject>
 
 /*
  * This is called whenever the web view wants to navigate. Defaults to YES.
  */
-- (BOOL)shouldStartDecidePolicy:(NSURLRequest *)request;
+@optional
+- (BOOL)webView:(UIView<FLWebViewProvider> *)webView shouldStartDecidePolicy:(NSURLRequest *)request;
 
 /*
  * This is called whenever the web view has started navigating.
  */
-- (void)didStartNavigation;
+@optional
+- (void)didStartNavigationForWebView:(UIView<FLWebViewProvider> *)webView;
 
 /*
  * This is called when navigation failed.
  */
-- (void)failLoadOrNavigation:(NSURLRequest *)request withError:(NSError *)error;
+@optional
+- (void)webView:(UIView<FLWebViewProvider> *)webView failLoadOrNavigation:(NSURLRequest *)request withError:(NSError *)error;
 
 /*
  * This is called when navigation succeeds and is complete.
  */
-- (void)finishLoadOrNavigation:(NSURLRequest *)request;
+@optional
+- (void)webView:(UIView<FLWebViewProvider> *)webView finishLoadOrNavigation:(NSURLRequest *)request;
 
 @end

@@ -212,9 +212,9 @@
     // Determine whether or not navigation should be allowed.
     // Return YES if it should, NO if not.
     
-    if ([self.webViewDelegate respondsToSelector:@selector(shouldStartDecidePolicy:)])
+    if ([self.webViewDelegate respondsToSelector:@selector(webView:shouldStartDecidePolicy:)])
     {
-        return [self.webViewDelegate shouldStartDecidePolicy:request];
+        return [self.webViewDelegate webView:self.webView shouldStartDecidePolicy:request];
     }
     
     return YES;
@@ -227,9 +227,9 @@
 {
     // Update things like loading indicators here.
     
-    if ([self.webViewDelegate respondsToSelector:@selector(didStartNavigation)])
+    if ([self.webViewDelegate respondsToSelector:@selector(didStartNavigationForWebView:)])
     {
-        return [self.webViewDelegate didStartNavigation];
+        return [self.webViewDelegate didStartNavigationForWebView:self.webView];
     }
 }
 
@@ -240,9 +240,9 @@
 {
     // Notify the user that navigation failed, provide information on the error, and so on.
     
-    if ([self.webViewDelegate respondsToSelector:@selector(failLoadOrNavigation:withError:)])
+    if ([self.webViewDelegate respondsToSelector:@selector(webView:failLoadOrNavigation:withError:)])
     {
-        return [self.webViewDelegate failLoadOrNavigation:request withError:error];
+        return [self.webViewDelegate webView:self.webView failLoadOrNavigation:request withError:error];
     }
 }
 
@@ -253,9 +253,9 @@
 {
     // Remove the loading indicator, maybe update the navigation bar's title if you have one.
     
-    if ([self.webViewDelegate respondsToSelector:@selector(finishLoadOrNavigation:)])
+    if ([self.webViewDelegate respondsToSelector:@selector(webView:finishLoadOrNavigation:)])
     {
-        return [self.webViewDelegate finishLoadOrNavigation:request];
+        return [self.webViewDelegate webView:self.webView finishLoadOrNavigation:request];
     }
 }
 
