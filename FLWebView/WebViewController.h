@@ -35,6 +35,8 @@
  */
 @property (nonatomic, readwrite) BOOL enableLoadingView;
 
+@property (nonatomic, readwrite) UIColor *backgroundColor;
+
 /**
  *  When enableLoadingView is set to true this block is called with an activity indicator styled as UIActivityIndicatorViewStyleWhiteLarge and centered on the webview. Perform whatever changes you wish and return it or simply return your own view.
  Note: The UIActivityIndicator will be used when this property is undefined and enableLoadingView is set to true.

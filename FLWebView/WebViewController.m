@@ -55,6 +55,7 @@
         _webView = [[WKWebView alloc] initWithFrame: [[self view] bounds]];
     } else {
         _webView = [[UIWebView alloc] initWithFrame: [[self view] bounds]];
+        _webView.opaque = NO;
     }
     
     // Add the webView to the current view.
@@ -63,6 +64,9 @@
     // Assign this view controller as the delegate view.
     // The delegate methods are below, and include methods for UIWebViewDelegate, WKNavigationDelegate, and WKUIDelegate
     [[self webView] setDelegateViews: self];
+    
+    self.webView.backgroundColor = self.backgroundColor ?: [UIColor whiteColor];
+    self.view.backgroundColor = self.webView.backgroundColor;
     
     // Ensure that everything will resize on device rotate.
     [[self webView] setAutoresizingMask: UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
