@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/DRosadoYew/FLWebView.git", :tag => '0.1.1' }
+  s.source       = { :git => "https://github.com/DRosadoYew/FLWebView.git", :tag => '0.1.2' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
