@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		938A247C1A1FE40E00767D48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A247B1A1FE40E00767D48 /* main.m */; };
-		938A247F1A1FE40E00767D48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A247E1A1FE40E00767D48 /* AppDelegate.m */; };
 		938A24821A1FE40E00767D48 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A24811A1FE40E00767D48 /* WebViewController.m */; };
-		938A24851A1FE40E00767D48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938A24831A1FE40E00767D48 /* Main.storyboard */; };
-		938A248A1A1FE40E00767D48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938A24881A1FE40E00767D48 /* LaunchScreen.xib */; };
 		938A24961A1FE40E00767D48 /* FLWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A24951A1FE40E00767D48 /* FLWebViewTests.m */; };
 		938A24A41A1FE82300767D48 /* UIWebView+FLUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A24A31A1FE82300767D48 /* UIWebView+FLUIWebView.m */; };
 		938A24A71A1FE8B800767D48 /* WKWebView+FLWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938A24A61A1FE8B800767D48 /* WKWebView+FLWKWebView.m */; };
@@ -30,14 +26,8 @@
 
 /* Begin PBXFileReference section */
 		938A24761A1FE40E00767D48 /* FLWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		938A247A1A1FE40E00767D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		938A247B1A1FE40E00767D48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		938A247D1A1FE40E00767D48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		938A247E1A1FE40E00767D48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		938A24801A1FE40E00767D48 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		938A24811A1FE40E00767D48 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		938A24841A1FE40E00767D48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		938A24891A1FE40E00767D48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		938A248F1A1FE40E00767D48 /* FLWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		938A24941A1FE40E00767D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		938A24951A1FE40E00767D48 /* FLWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLWebViewTests.m; sourceTree = "<group>"; };
@@ -93,12 +83,8 @@
 			children = (
 				938A24A11A1FE7CF00767D48 /* Categories */,
 				938A249F1A1FE4B200767D48 /* Protocols */,
-				938A247D1A1FE40E00767D48 /* AppDelegate.h */,
-				938A247E1A1FE40E00767D48 /* AppDelegate.m */,
 				938A24801A1FE40E00767D48 /* WebViewController.h */,
 				938A24811A1FE40E00767D48 /* WebViewController.m */,
-				938A24831A1FE40E00767D48 /* Main.storyboard */,
-				938A24881A1FE40E00767D48 /* LaunchScreen.xib */,
 				938A24791A1FE40E00767D48 /* Supporting Files */,
 			);
 			path = FLWebView;
@@ -107,8 +93,6 @@
 		938A24791A1FE40E00767D48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				938A247A1A1FE40E00767D48 /* Info.plist */,
-				938A247B1A1FE40E00767D48 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -230,8 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938A24851A1FE40E00767D48 /* Main.storyboard in Resources */,
-				938A248A1A1FE40E00767D48 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +234,6 @@
 				938A24821A1FE40E00767D48 /* WebViewController.m in Sources */,
 				938A24A41A1FE82300767D48 /* UIWebView+FLUIWebView.m in Sources */,
 				938A24A71A1FE8B800767D48 /* WKWebView+FLWKWebView.m in Sources */,
-				938A247F1A1FE40E00767D48 /* AppDelegate.m in Sources */,
-				938A247C1A1FE40E00767D48 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,25 +254,6 @@
 			targetProxy = 938A24901A1FE40E00767D48 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		938A24831A1FE40E00767D48 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				938A24841A1FE40E00767D48 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		938A24881A1FE40E00767D48 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				938A24891A1FE40E00767D48 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		938A24971A1FE40E00767D48 /* Debug */ = {
