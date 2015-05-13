@@ -28,7 +28,7 @@
 /**
  *  Delegate with generic methods from the webview, being it a WKWebView or a UIWebView.
  */
-@property (nonatomic, readwrite, unsafe_unretained) id <WebViewDelegate> webViewDelegate;
+@property (nonatomic, readwrite, strong) id <WebViewDelegate> webViewDelegate;
 
 /**
  *  When enabled presents a UIActivityIndicator while the webview is loading a new page.

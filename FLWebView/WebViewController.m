@@ -11,6 +11,8 @@
 #import "UIWebView+FLUIWebView.h"
 #import "WKWebView+FLWKWebView.h"
 
+#define WebViewControllerLoadingViewTag 12345
+
 @interface WebViewController ()
 
 @property (nonatomic, readwrite, strong) NSString *URLToLoad;
@@ -117,17 +119,7 @@
  */
 - (void) webViewDidStartLoad: (UIWebView *) webView
 {
-    if (self.enableLoadingView)
-    {
-        UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        activityIndicatorView.center = self.webView.center;
-        [activityIndicatorView startAnimating];
-        
-        UIView *loadingView = self.LoadingViewBlock ? self.LoadingViewBlock(activityIndicatorView) : activityIndicatorView;
-        [self.webView addSubview:loadingView];
-    }
-    
-    [self didStartNavigation];
+    [self didStartNavigationForURL:webView.URL];
 }
 
 /*
@@ -166,7 +158,7 @@
  */
 - (void) webView: (WKWebView *) webView didStartProvisionalNavigation: (WKNavigation *) navigation
 {
-    [self didStartNavigation];
+    [self didStartNavigationForURL:webView.URL];
 }
 
 /*
@@ -227,14 +219,32 @@
 /*
  * This is called whenever the web view has started navigating.
  */
-- (void) didStartNavigation
+- (void) didStartNavigationForURL:(NSURL *)url
 {
     // Update things like loading indicators here.
+    if (self.enableLoadingView)
+    {
+        UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activityIndicatorView.center = self.webView.center;
+        [activityIndicatorView startAnimating];
+        
+        UIView *loadingView = self.LoadingViewBlock ? self.LoadingViewBlock(activityIndicatorView) : activityIndicatorView;
+        loadingView.tag = WebViewControllerLoadingViewTag;
+        [self.webView addSubview:loadingView];
+    }
+    
+    [self.webView setRequest:[NSURLRequest requestWithURL:url]];
     
     if ([self.webViewDelegate respondsToSelector:@selector(didStartNavigationForWebView:)])
     {
         return [self.webViewDelegate didStartNavigationForWebView:self.webView];
     }
+}
+
+- (void)removeLoadingView
+{
+    UIView *loadingView = [self.webView viewWithTag:WebViewControllerLoadingViewTag];
+    [loadingView removeFromSuperview];
 }
 
 /*
@@ -243,6 +253,7 @@
 - (void) failLoadOrNavigation: (NSURLRequest *) request withError: (NSError *) error
 {
     // Notify the user that navigation failed, provide information on the error, and so on.
+    [self removeLoadingView];
     
     if ([self.webViewDelegate respondsToSelector:@selector(webView:failLoadOrNavigation:withError:)])
     {
@@ -256,6 +267,7 @@
 - (void) finishLoadOrNavigation: (NSURLRequest *) request
 {
     // Remove the loading indicator, maybe update the navigation bar's title if you have one.
+    [self removeLoadingView];
     
     if ([self.webViewDelegate respondsToSelector:@selector(webView:finishLoadOrNavigation:)])
     {
