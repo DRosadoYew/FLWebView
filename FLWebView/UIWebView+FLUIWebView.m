@@ -10,6 +10,11 @@
 
 @implementation UIWebView (FLWebView)
 
+- (void)setRequest:(NSURLRequest *)request
+{
+    // Quick hack to make it compliant with the protocol. UIWebView already has a readonly "request" property.
+}
+
 /*
  * Set any delegate view that implements UIWebViewDelegate.
  * FLWKWebView has a comparable method that looks for its own delegates.
