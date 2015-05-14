@@ -35,6 +35,11 @@
  */
 @property (nonatomic, readwrite) BOOL enableLoadingView;
 
+/**
+ *  Enable bounce on the underlying scroll view.
+ */
+@property (nonatomic, readwrite) BOOL bounces;
+
 @property (nonatomic, readwrite) UIColor *backgroundColor;
 
 /**
