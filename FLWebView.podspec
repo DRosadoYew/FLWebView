@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FLWebView"
-  s.version      = "0.1.0"
+  s.version      = "0.1.2"
   s.summary      = "WKWebView with UIWebView fallback for iOS."
 
   s.description  = <<-DESC
