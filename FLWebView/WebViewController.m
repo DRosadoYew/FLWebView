@@ -60,6 +60,8 @@
         _webView.opaque = NO;
     }
     
+    self.webView.scrollView.bounces = NO;
+    
     // Add the webView to the current view.
     [[self view] addSubview: [self webView]];
     

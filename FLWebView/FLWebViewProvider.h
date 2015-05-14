@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*
  * This class defines methods that FLUIWebView and FLWKWebView should implement in
@@ -25,6 +26,11 @@
  * Returns the active NSURL. Again, this is a bit different between the two web views.
 */
 @property (nonatomic, strong) NSURL *URL;
+
+/**
+ *  Returns the underlying scrollview.
+ */
+@property (nonatomic, readonly) UIScrollView *scrollView;
 
 /*
  * Assign a delegate view for this webview.
